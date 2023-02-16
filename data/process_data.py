@@ -13,8 +13,8 @@ def load_data(messages_filepath, categories_filepath):
         df: merged dataframe containing the content of messages and categories datasets
     """
     #load data from two csv files
-    messages = pd.read_csv(r'C:\Users\DIGITRON\Desktop\Project2\data\disaster_messages.csv')
-    categories = pd.read_csv(r'C:\Users\DIGITRON\Desktop\Project2\data\disaster_categories.csv')
+    messages = pd.read_csv(r'data/disaster_messages.csv')
+    categories = pd.read_csv(r'data/disaster_categories.csv')
     # merge datasets
     df = pd.merge(messages, categories, on='id')
     
@@ -69,9 +69,9 @@ def save_data(df, database_filename):
         df (dataframe): cleaned dataframe of messages and categories
         database_filename (str): name of the database file
     """
-    engine = create_engine('sqlite:///data/disaster_response.db')
-    df.to_sql('disaster_response', engine, index=False)
-      
+    # engine = create_engine('sqlite:///' + database_filename)
+    engine = create_engine('sqlite:///{}'.format(database_filename))
+    df.to_sql('disaster_response', engine, index=False, if_exists='replace')    
 
 
 def main():
