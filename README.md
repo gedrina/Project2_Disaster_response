@@ -5,38 +5,41 @@
 Figure 8 is a company that aids in the transformation of data by offering both human annotators and machine learning capabilities to annotate data at various scales. One area that significantly benefits from data and machine learning is disaster response. The focus of this project is to create a model capable of classifying messages received in real time during a disaster event into 36 pre-defined categories.The project is divided into three sections:
 
 1. Data Processing - Data cleaning ETL pipeline 
-    *Loads the messages and categories datasets
-    *Merges the two datasets
-    *Cleans the data
-    *Stores it in a SQLite database
-2.Machine Learning Pipeline 
-    *Loads data from the SQLite database
-    *Splits the dataset into training and test sets
-    *Create a machine learning pipeline to train a model which is able to classify text messages in 36 categories
-    *Exports the final model as a pickle file
-3.Web Application using Flask - display the results of the model in real-time 
+    - Loads the messages and categories datasets
+    - Merges the two datasets
+    - Cleans the data
+    - Stores it in a SQLite database
+2. Machine Learning Pipeline 
+- Loads data from the SQLite database
+- Splits the dataset into training and test sets
+- Create a machine learning pipeline to train a model which is able to classify text messages in 36 categories
+- Exports the final model as a pickle file
 
-#Files Descriptions
+3. Web Application using Flask - display the results of the model in real-time 
+
+# Files Descriptions
 
 - app
-| - template
-| |- master.html  # main page of web app
-| |- go.html  # classification result page of web app
-|- run.py  # Flask file that runs app
+ * template
+* master.html  # main page of web app
+* go.html  # classification result page of web app
+* run.py  # Flask file that runs app
 
 - data
-|- disaster_categories.csv  # categories dataset
-|- disaster_messages.csv  # messages dataset
-|- process_data.py # ETL process
-|- disaster_response.db   # database 
+* disaster_categories.csv  # categories dataset
+* disaster_messages.csv  # messages dataset
+* process_data.py # ETL process
+* disaster_response.db   # database 
 
 - models
-|- train_classifier.py #classification code
-|- classifier.pkl  # saved model 
+* train_classifier.py #classification code
+* classifier.pkl  # saved model 
 
 - README.md
 
-# Instructions:
+
+# Instructions
+
 1. Run the requirements file to install the needed libraries
     `pip install -r requirements.txt`
 
