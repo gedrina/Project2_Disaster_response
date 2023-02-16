@@ -12,9 +12,9 @@ def load_data(messages_filepath, categories_filepath):
     Returns:
         df: merged dataframe containing the content of messages and categories datasets
     """
-    #load data from two csv files
-    messages = pd.read_csv(r'data/disaster_messages.csv')
-    categories = pd.read_csv(r'data/disaster_categories.csv')
+    # load data from two csv files
+    messages = pd.read_csv(messages_filepath)
+    categories = pd.read_csv(categories_filepath)
     # merge datasets
     df = pd.merge(messages, categories, on='id')
     
@@ -95,9 +95,8 @@ def main():
         print('Please provide the filepaths of the messages and categories '\
               'datasets as the first and second argument respectively, as '\
               'well as the filepath of the database to save the cleaned data '\
-              'to as the third argument. \n\nExample: python process_data.py '\
-              'disaster_messages.csv disaster_categories.csv '\
-              'DisasterResponse.db')
+              'to as the third argument. \n\nExample: '\
+              'python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/disaster_response.db')
 
 
 if __name__ == '__main__':
