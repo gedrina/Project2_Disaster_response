@@ -121,7 +121,6 @@ def save_model(model, model_filepath):
 
 def main():
     if len(sys.argv) == 3:
-    # if True:
         database_filepath, model_filepath = sys.argv[1:]
         # database_filepath, model_filepath = '../data/disaster_response.db', 'classifier.pkl'
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
@@ -145,8 +144,8 @@ def main():
     else:
         print('Please provide the filepath of the disaster messages database '\
               'as the first argument and the filepath of the pickle file to '\
-              'save the model to as the second argument. \n\nExample: python '\
-              'train_classifier.py ../data/DisasterResponse.db classifier.pkl')
+              'save the model to as the second argument. \n\nExample: '\
+              'python models/train_classifier.py data/disaster_response.db models/classifier.pkl')
 
 
 if __name__ == '__main__':
